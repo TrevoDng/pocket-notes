@@ -167,10 +167,10 @@
 
     if (!localstorage) {
       alert("Notes can't be saved in your browser.");
+createNote();
     }
     else {
       console.log('localstorage available');
-}
       var data = localstorage ? JSON.parse(window.localStorage.getItem('pocket-notes')) : null;
 
       if (data) {
@@ -189,6 +189,7 @@
 
       } else {
         createNote();
-      }
+      }
+}
   };
 })()
