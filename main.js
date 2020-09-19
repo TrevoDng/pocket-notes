@@ -171,7 +171,7 @@
     else {
       console.log('localstorage available');
 }
-      var data = JSON.parse(window.localStorage.getItem('pocket-notes'));
+      var data = localstorage ? JSON.parse(window.localStorage.getItem('pocket-notes')) : null;
 
       if (data) {
         NOTES.lastNoteID = data.lastNoteID;
