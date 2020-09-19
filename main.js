@@ -9,12 +9,12 @@
     save: function (id, value) {
       if (value.markdown === '') return;
       this.notes[id] = value;
-      localStorage.setItem('pocket-notes', JSON.stringify(NOTES));
+      localstorage && localStorage.setItem('pocket-notes', JSON.stringify(NOTES));
     },
     delete: function (id) {
       delete this.notes[id];
       NOTES.lastNoteID -= 1;
-      localStorage.setItem('pocket-notes', JSON.stringify(NOTES));
+     localstorage && localStorage.setItem('pocket-notes', JSON.stringify(NOTES));
     }
   }
 
@@ -170,6 +170,7 @@
     }
     else {
       console.log('localstorage available');
+}
       var data = JSON.parse(window.localStorage.getItem('pocket-notes'));
 
       if (data) {
@@ -188,7 +189,6 @@
 
       } else {
         createNote();
-      }
-    }
+      }
   };
 })()
